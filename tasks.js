@@ -49,7 +49,9 @@ function onDataReceived(text) {
   else if(text[0] === 'hello'){
     hello(text[1]);
   }else if (text[0] === "add") {
-    add(text.join(" "));}
+    add(text.join(" "));
+  }else if (text[0] === "remove") {
+    remove(text);}
   else{
     unknownCommand(text[0]);
   }
@@ -115,5 +117,13 @@ function add(x) {
     }
   }
 }
+function remove(x) {
+  if (x == "") {
+    tasks.splice(tasks.length - 1, 1);
+  } else {
+    tasks.splice(x - 1, 1);
+  }
+}
+
 // The following line starts the application
 startApp("Kawthar Zeayter")
