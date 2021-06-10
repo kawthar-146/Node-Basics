@@ -99,7 +99,7 @@ function quit(){
  */
 
 function help(){
-  console.log('hello -- hello!\nhello your_name -- hello your_name!\nexit or quit -- exit')
+  console.log('hello -- hello!\nhello your_name -- hello your_name!\nexit or quit -- exit\nlist--see your list of tasks\nadd task--list of tasks with your new task\nremove--removes last task\nremove number--remove the numberth task')
 }
 tasks = ["don't sleep", "do the exercises"];
 function list() {
