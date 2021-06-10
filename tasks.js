@@ -48,7 +48,8 @@ function onDataReceived(text) {
     list();}
   else if(text[0] === 'hello'){
     hello(text[1]);
-  }
+  }else if (text[0] === "add") {
+    add(text.join(" "));}
   else{
     unknownCommand(text[0]);
   }
@@ -98,10 +99,20 @@ function quit(){
 function help(){
   console.log('hello -- hello!\nhello your_name -- hello your_name!\nexit or quit -- exit')
 }
+tasks = ["don't sleep", "do the exercises"];
 function list() {
-  tasks = ["don't sleep", "do the exercises"];
   for (var i = 0; i < tasks.length; i++) {
     console.log(i + 1 + "- " + tasks[i]);
+  }
+}
+function add(x) {
+  if (x == "") {
+    console.log("error! you should add something");
+  } else {
+    tasks.push(x);
+    for (var i = 0; i < tasks.length; i++) {
+      console.log(i + 1 + "- " + tasks[i]);
+    }
   }
 }
 // The following line starts the application
