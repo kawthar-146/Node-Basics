@@ -37,6 +37,9 @@ function onDataReceived(text) {
   if (text === 'quit\n' || text === 'exit\n') {
     quit();
   }
+  else if(text ==='help\n'){
+    help();
+  }
   else if(text === 'hello\n'){
     hello();
   }
@@ -76,6 +79,9 @@ function hello(){
 function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
+}
+function help(){
+  console.log('hello -- hello!\nexit or quit -- exit')
 }
 
 // The following line starts the application
