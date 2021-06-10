@@ -120,7 +120,9 @@ function add(x) {
 function remove(x) {
   if (x == "") {
     tasks.splice(tasks.length - 1, 1);
-  } else {
+  } else if (x <= 0 || x > tasks.length) {
+    console.log("error! number doesn't exist.");}
+  else {
     tasks.splice(x - 1, 1);
   }
 }
