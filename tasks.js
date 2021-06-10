@@ -44,7 +44,8 @@ function onDataReceived(text) {
   }
   else if(text[0] ==='help'){
     help();
-  }
+  }else if (text[0] === "list") {
+    list();}
   else if(text[0] === 'hello'){
     hello(text[1]);
   }
@@ -97,6 +98,11 @@ function quit(){
 function help(){
   console.log('hello -- hello!\nhello your_name -- hello your_name!\nexit or quit -- exit')
 }
-
+function list() {
+  tasks = ["don't sleep", "do the exercises"];
+  for (var i = 0; i < tasks.length; i++) {
+    console.log(i + 1 + "- " + tasks[i]);
+  }
+}
 // The following line starts the application
 startApp("Kawthar Zeayter")
