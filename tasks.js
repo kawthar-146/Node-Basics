@@ -12,6 +12,7 @@
 function startApp(name){
   process.stdin.resume();
   process.stdin.setEncoding('utf8');
+  Load();
   process.stdin.on('data', onDataReceived);
   console.log(`Welcome to ${name}'s application!`)
   console.log("--------------------")
@@ -94,13 +95,34 @@ function hello(x){
 }
 
 }
+function Load(){
+const fs = require('fs');
+try {
+  let Ldata = fs.readFileSync('database.json');
+  let d = JSON.parse(Ldata);
+  console.log(d);
+  console.log("worked");
+} catch (e) {
+  console.error(e);
+}
+}
 /**
  * Exits the application
  *
  * @returns {void}
  */
+ tasks = ["don't sleep", "do the exercises"];
+ done = [true, false];
 function quit(){
   console.log('Quitting now, goodbye!')
+  const fs = require('fs');
+  const data = JSON.stringify(tasks);
+  try {
+    fs.writeFileSync('database.json', data);
+    console.log('worked');
+  } catch (e) {
+    console.error(e);
+  }
   process.exit();
 }
 /**
@@ -112,8 +134,7 @@ function quit(){
 function help(){
   console.log('hello -- hello!\nhello your_name -- hello your_name!\nexit or quit -- exit\nlist--see your list of tasks\nadd task--list of tasks with your new task\nremove--removes last task\nremove number--remove the numberth taskncheck number--> checks the numberth task\nuncheck number-->uncheck the numberth tast\ncheck number--checks the numberth task\nuncheck number--uncheck the numberth tast')
 }
-tasks = ["don't sleep", "do the exercises"];
-done = [true, false];
+
 function list() {
   for (var i = 0; i < tasks.length; i++) {
     if (done[i] == true) {
