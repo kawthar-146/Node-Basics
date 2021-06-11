@@ -107,11 +107,17 @@ function help(){
   console.log('hello -- hello!\nhello your_name -- hello your_name!\nexit or quit -- exit\nlist--see your list of tasks\nadd task--list of tasks with your new task\nremove--removes last task\nremove number--remove the numberth task')
 }
 tasks = ["don't sleep", "do the exercises"];
+done = [true, false];
 function list() {
   for (var i = 0; i < tasks.length; i++) {
-    console.log(i + 1 + "- " + tasks[i]);
+    if (done[i] == true) {
+      console.log(i + 1 + " - " + "[✓] " + tasks[i]);
+    } else {
+      console.log(i + 1 + " - " + "[ ] " + tasks[i]);
+    }
   }
 }
+
 function add(x) {
   if (x == "") {
     console.log("error! you should add something");
