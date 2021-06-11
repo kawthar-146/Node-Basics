@@ -49,6 +49,7 @@ function onDataReceived(text) {
   else if(text[0] === 'hello'){
     hello(text[1]);
   }else if (text[0] === "add") {
+    text.shift();
     add(text.join(" "));
   }else if (text[0] === "remove") {
     remove(text);}
@@ -82,7 +83,7 @@ function hello(x){
   console.log('hello " + x + "!"')
 }
 
-
+}
 /**
  * Exits the application
  *
