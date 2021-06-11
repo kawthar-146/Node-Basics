@@ -95,17 +95,46 @@ function hello(x){
 }
 
 }
+
 function Load(){
-const fs = require('fs');
-try {
-  let Ldata = fs.readFileSync('database.json');
-  let d = JSON.parse(Ldata);
-  console.log(d);
-  console.log("worked");
-} catch (e) {
-  console.error(e);
+console.log(process.argv);
+if (process.argv.length > 2) {
+  const fs = require('fs');
+  const data = JSON.stringify(tasks);
+  try {
+    fs.writeFileSync(process.argv[2], data);
+    console.log('worked');
+  } catch (e) {
+    console.error(e);
+  }
+  try {
+    let Ldata = fs.readFileSync(process.argv[2]);
+    let data1 = JSON.parse(Ldata);
+    console.log(data1);
+    console.log("worked");
+  } catch (e) {
+    console.error(e);
+  }
+} else {
+  const fs = require('fs');
+  const data = JSON.stringify(tasks);
+  try {
+    fs.writeFileSync('database.json', data);
+    console.log('worked');
+  } catch (e) {
+    console.error(e);
+  }
+  try {
+    let Ldata = fs.readFileSync('database.json');
+    let data2= JSON.parse(Ldata);
+    console.log(data2);
+    console.log("worked");
+  } catch (e) {
+    console.error(e);
+  }
 }
 }
+
 /**
  * Exits the application
  *
