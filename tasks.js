@@ -110,7 +110,7 @@ function quit(){
  */
 
 function help(){
-  console.log('hello -- hello!\nhello your_name -- hello your_name!\nexit or quit -- exit\nlist--see your list of tasks\nadd task--list of tasks with your new task\nremove--removes last task\nremove number--remove the numberth task')
+  console.log('hello -- hello!\nhello your_name -- hello your_name!\nexit or quit -- exit\nlist--see your list of tasks\nadd task--list of tasks with your new task\nremove--removes last task\nremove number--remove the numberth taskncheck number--> checks the numberth task\nuncheck number-->uncheck the numberth tast\ncheck number--checks the numberth task\nuncheck number--uncheck the numberth tast')
 }
 tasks = ["don't sleep", "do the exercises"];
 done = [true, false];
